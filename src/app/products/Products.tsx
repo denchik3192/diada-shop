@@ -3,6 +3,7 @@ import Image from 'next/image';
 import s from './products.module.scss';
 import { useParams, usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { Metadata } from 'next';
+import Card from '@/components/card/Card';
 export const metadata: Metadata = {
   title: 'Products',
 };
@@ -19,9 +20,11 @@ export default function Products({ data }: any) {
     <div className={s.products}>
       <h1>Products</h1>
       <Image src="/next.svg" alt="next" width={200} height={50} />
-      {data.map((el: any) => (
-        <div key={el.id}>{el.title}</div>
-      ))}
+      <div className="grid grid-cols-4 ">
+        {data.map((el: any) => (
+          <Card key={el.id} el={el}></Card>
+        ))}
+      </div>
     </div>
   );
 }
