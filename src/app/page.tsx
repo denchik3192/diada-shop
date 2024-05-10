@@ -2,13 +2,33 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Footer from './../components/footer/Footer';
 import Header from '@/components/Header/Header';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import Button from '@/components/button/Button';
 
 export default function Home() {
   return (
     <>
       <Header />
+      <main className="flex items-center justify-between px-20">
+        <div className="title-section py-20">
+          <Button>
+            Купить - Узнать больше
+            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              -&gt;
+            </span>
+          </Button>
+          <div className="text-5xl font-bold uppercase py-10 max-w-lg tracking-wider text-lime-800">
+            вкус природных даров
+          </div>
+          <p className="text-stone-500 pb-10 max-w-md">
+            Откройте для себя наш тщательно подобранный выбор изысканных чаев, сырого меда и
+            питательного урбетча – вашего путешествие к естественному здоровью начинается здесь.
+          </p>
+
+          <Button>Товары</Button>
+          <Button>Story</Button>
+        </div>
+        <Image src={'/tea.jpeg'} width={500} height={300} alt="tea-img" />
+      </main>
 
       <div className="flex min-h-screen flex-col items-center justify-between p-10">
         <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">

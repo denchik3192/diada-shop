@@ -5,7 +5,7 @@ interface HeaderProps {}
 
 export const Header: FunctionComponent<HeaderProps> = () => {
   return (
-    <div className="flex items-center p-10">
+    <div className="flex items-center px-20 py-5">
       <h1 className="text-lg">DIADA</h1>
       <nav className="z-10 w-full max-w-8xl font-mono text-lg lg:flex justify-end">
         <Link className="pointer-events-none gap-2 lg:pointer-events-auto pr-10" href="/">
