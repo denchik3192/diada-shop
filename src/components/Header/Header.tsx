@@ -1,29 +1,29 @@
 import Link from 'next/link';
-import { FunctionComponent } from 'react';
+import { FC, FunctionComponent } from 'react';
+import { menu } from './menu.data';
+import NavItem from './NavItem';
 
-interface HeaderProps {}
-
-export const Header: FunctionComponent<HeaderProps> = () => {
+export const Header: FC = () => {
   return (
-    <div className="flex items-center px-20 py-5">
-      <h1 className="text-lg">DIADA</h1>
-      <nav className="z-10 w-full max-w-8xl font-mono text-lg lg:flex justify-end">
-        <Link className="pointer-events-none gap-2 lg:pointer-events-auto pr-10" href="/">
-          <h2>Главная</h2>
+    <header className="mb-8 border-b">
+      <div className="flex items-center justify-between mx-auto max-w-2xl px-4 py-5 sm:px-6 lg:max-w-7xl">
+        <Link href={'/'}>
+          <h1 className="text-2xl font-bold text-violet-800">DIADA</h1>
         </Link>
-        <Link className="pointer-events-none gap-2 lg:pointer-events-auto pr-10" href="/products">
-          <h2>Каталог</h2>
-        </Link>
-        <Link className="pointer-events-none gap-2 lg:pointer-events-auto pr-10" href="/products">
-          <h2>Контакты</h2>
-        </Link>
-        <Link
-          className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-          href="/products">
-          <>+7(999) 895-01-11</>
-        </Link>
-      </nav>
-    </div>
+
+        <nav className="hidden gap-12 lg:flex 2xl:ml-16">
+          {menu.map((item, index) => (
+            <NavItem key={index} item={item} />
+          ))}
+
+          {/* <Link
+            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
+            href="/products">
+            <>+7(999) 895-01-11</>
+          </Link> */}
+        </nav>
+      </div>
+    </header>
   );
 };
 

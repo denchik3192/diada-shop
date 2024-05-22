@@ -3,12 +3,13 @@ import Link from 'next/link';
 import Footer from './../components/footer/Footer';
 import Header from '@/components/Header/Header';
 import Button from '@/components/button/Button';
+import MainBunner from '@/components/MainBunner/MainBunner';
 
 export default function Home() {
   return (
-    <>
-      <Header />
-      <main className="flex items-center justify-between px-20">
+    <div className="bg-white pb-6 sm:pb-8 lg:pb-12">
+      <MainBunner />
+      {/* <main className="flex items-center justify-between px-20">
         <div className="title-section py-20">
           <Button>
             Купить - Узнать больше
@@ -111,8 +112,8 @@ export default function Home() {
             </p>
           </a>
         </div>
-      </div>
-      <Footer />
-    </>
+      </div> */}
+      {/* <Footer /> */}
+    </div>
   );
 }
