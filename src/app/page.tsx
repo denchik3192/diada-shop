@@ -4,11 +4,20 @@ import Footer from './../components/footer/Footer';
 import Header from '@/components/Header/Header';
 import Button from '@/components/button/Button';
 import MainBunner from '@/components/MainBunner/MainBunner';
+import Catalog from '@/components/catalog/Catalog';
+import { ProductService } from '@/services/product.service';
 
-export default function Home() {
+async function getProducts() {
+  const data = await ProductService.getAll();
+  return data;
+}
+
+export default async function Home() {
+  const data = await getProducts();
   return (
     <div className="bg-white pb-6 sm:pb-8 lg:pb-12">
       <MainBunner />
+      <Catalog products={data} isFull={false} />
       {/* <main className="flex items-center justify-between px-20">
         <div className="title-section py-20">
           <Button>
