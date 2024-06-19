@@ -14,18 +14,24 @@ export const Catalog: FC<ICatalog> = ({ products, isFull = true }) => {
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 sm:px-6 py-4 lg:max-w-7xl lg:px-8">
-        <h2 className="text-2xl font-bold tracking-tight text-gray-900">Новейшие товары:</h2>
-        {!isFull && (
-          <Link href={'/catalog'} className="text-violet-600 flex items-center gap-x-1">
-            Больше товаров
-            <span>
-              <ArrowRight />
-            </span>
-          </Link>
-        )}
+        <div className="flex justify-between items-center">
+          <h2 className="bg-orange-100 text-2xl font-bold tracking-tight text-gray-900">
+            Новейшие товары:
+          </h2>
+          {!isFull && (
+            <Link
+              href={'/catalog'}
+              className="text-violet-600 flex items-center space-between gap-x-1">
+              Больше товаров
+              <span>
+                <ArrowRight />
+              </span>
+            </Link>
+          )}
+        </div>
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 ml:gap-x-8">
           {data.map((p) => (
-            <ProductItem key={p._id} product={p} />
+            <ProductItem key={p.id} product={p} />
           ))}
         </div>
       </div>

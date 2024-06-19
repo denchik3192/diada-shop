@@ -15,7 +15,7 @@ async function getProducts() {
 export default async function Home() {
   const data = await getProducts();
   return (
-    <div className="bg-white pb-6 sm:pb-8 lg:pb-12">
+    <div className=" bg-orange-100 pb-6 sm:pb-8 lg:pb-12">
       <MainBunner />
       <Catalog products={data} isFull={false} />
       {/* <main className="flex items-center justify-between px-20">
@@ -122,7 +122,7 @@ export default async function Home() {
           </a>
         </div>
       </div> */}
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
