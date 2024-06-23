@@ -122,7 +122,7 @@ export default async function Home() {
           </a>
         </div>
       </div> */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

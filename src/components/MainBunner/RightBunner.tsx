@@ -1,5 +1,7 @@
+'use client';
 import Image from 'next/image';
 import { FC } from 'react';
+import { motion } from 'framer-motion';
 
 const RightBunner: FC = () => {
   return (
@@ -13,7 +15,11 @@ const RightBunner: FC = () => {
           height={400}
         />
       </div>
-      <div className=" overflow-hidden px-2 py-2 rounded-lg bg-gray-100 shadow-lg rotate-12">
+      <motion.div
+        initial={{ rotate: 10 }}
+        animate={{ rotate: 20 }}
+        transition={{ delay: 0.5 }}
+        className=" overflow-hidden px-2 py-2 rounded-lg bg-gray-100 shadow-lg rotate-12">
         <Image
           src="/barsuk.jpg"
           alt="Banner"
@@ -21,7 +27,7 @@ const RightBunner: FC = () => {
           width={400}
           height={400}
         />
-      </div>
+      </motion.div>
     </div>
   );
 };

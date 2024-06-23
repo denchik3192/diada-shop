@@ -10,7 +10,6 @@ const fetchData = async () => {
 
 export default async function Page() {
   const data = await fetchData();
-  console.log(data);
 
   if (!data) redirect('/404');
 

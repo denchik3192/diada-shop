@@ -1,7 +1,8 @@
 import { ProductService } from '@/services/product.service';
+import Image from 'next/image';
 import { useParams } from 'next/navigation';
 
-export default async function Page({ params }: { params: { slug: string } }) {
+export default async function ProductPage({ params }: { params: { slug: string } }) {
   async function getProducts() {
     const data = await ProductService.getOneProduct(params.slug);
     return data;
@@ -9,8 +10,12 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const data = await getProducts();
 
   return (
-    <div>
-      <h1>{data.title}</h1>My Post: {params.slug}
+    <div className="flex items-center justify-between mx-auto py-6 lg:max-w-7xl">
+      <Image src={'/honey-demo.jpg'} width={800} height={500} alt="product image" />
+      <div className="pl-8 align-start">
+        <h1 className="text-4xl">{data.title}</h1>
+        <p className="text-lg">{data.body}</p>
+      </div>
     </div>
   );
 }
