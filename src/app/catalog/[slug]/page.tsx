@@ -1,5 +1,7 @@
+import Button from '@/components/button/Button';
 import { ProductService } from '@/services/product.service';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useParams } from 'next/navigation';
 
 export default async function ProductPage({ params }: { params: { slug: string } }) {
@@ -15,6 +17,9 @@ export default async function ProductPage({ params }: { params: { slug: string }
       <div className="pl-8 align-start">
         <h1 className="text-4xl">{data.title}</h1>
         <p className="text-lg">{data.body}</p>
+        <Link href={'/catalog'}>
+          <Button>Вернуться</Button>
+        </Link>
       </div>
     </div>
   );

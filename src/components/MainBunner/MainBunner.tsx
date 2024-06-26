@@ -1,6 +1,8 @@
+'use client';
 import React, { FC } from 'react';
 import LeftBunner from './LeftBunner';
 import RightBunner from './RightBunner';
+import { motion } from 'framer-motion';
 
 const MainBunner: FC = () => {
   return (
