@@ -20,6 +20,8 @@ export default async function ProductPage({ params }: { params: { slug: string }
         <Link href={'/catalog'}>
           <Button>Вернуться</Button>
         </Link>
+
+        <Button>В Корзину</Button>
       </div>
     </div>
   );
